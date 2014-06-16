@@ -95,13 +95,16 @@ function animation() {
 		  document.getElementById('signup').style.opacity = 1;
     }
 
-    function animate() {
+    // render a frame each 60 ms
+    var animationFrame = setInterval(function() {
       stage.update();
-      requestAnimationFrame(animate);
-    }
+    }, 20);
 
-    animate();
+    // stop rendering after 8 seconds
+    setTimeout(function() {
+      clearInterval(animationFrame);
+    }, 8000)
+
 }
 
 window.onload = animation();
-
