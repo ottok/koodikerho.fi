@@ -11,7 +11,7 @@
     var textString = 'KOODIKERHO.FI';
 
     var offsetX = (window.innerWidth-800)/2;
-    var offsetY = -30;
+    var offsetY = 0;
     var textStage = new createjs.Stage('text');
     textStage.canvas.width = window.innerWidth;
     textStage.canvas.height = window.innerHeight;
@@ -127,8 +127,16 @@
     }
   }
 
-  window.onload = checkEnoughWidth();
-  window.onresize = checkEnoughWidth();
+
+  // Don't even try canvas stuff on IE
+  if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+    document.getElementById('logo').style.display = 'inline-block';
+    showSignupForm();
+  } else {
+    window.onload = checkEnoughWidth();
+    window.onresize = checkEnoughWidth();
+    animation();
+  }
 
   var logoDone = false;
 
