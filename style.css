@@ -1,0 +1,43 @@
+body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+h1.sitetitle {
+  display: none;
+}
+
+#signup {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#signup input[type="text"] {
+  border: 1px solid #ddd;
+  padding: 6px;
+  font-size: 18px;
+}
+
+#signup input[type="submit"] {
+  display: inline-block;
+  border: 0;
+  line-height: 35px;
+  height: 35px;
+  color: #fff;
+  background: #d33;
+  font-size: 18px;
+  cursor: pointer;
+}
+
