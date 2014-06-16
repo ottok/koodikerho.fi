@@ -41,3 +41,15 @@ h1.sitetitle {
   cursor: pointer;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+}
