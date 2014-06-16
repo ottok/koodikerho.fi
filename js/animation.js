@@ -11,7 +11,7 @@
     var textString = 'KOODIKERHO.FI';
 
     var offsetX = (window.innerWidth-800)/2;
-    var offsetY = (window.innerHeight-400)/2;
+    var offsetY = -30;
     var textStage = new createjs.Stage('text');
     textStage.canvas.width = window.innerWidth;
     textStage.canvas.height = window.innerHeight;
@@ -99,10 +99,6 @@
       });
     }
 
-    function showSignupForm(top, left) {
-      document.getElementById('signup').style.opacity = 1;
-    }
-
     // render a frame each 60 ms
     var animationFrame = setInterval(function() {
       stage.update();
@@ -113,8 +109,27 @@
       clearInterval(animationFrame);
     }, 8000);
 
+    logoDone = true;
   }
 
-  window.onload = animation();
+  function showSignupForm() {
+    document.getElementById('signup').style.opacity = 1;
+  }
+
+  function checkEnoughWidth() {
+    // wrap as callback to get fired at correct time
+    return function() {
+      if (window.innerWidth >= 768 && logoDone === false) {
+        animation();
+      } else {
+        showSignupForm();
+      }
+    }
+  }
+
+  window.onload = checkEnoughWidth();
+  window.onresize = checkEnoughWidth();
+
+  var logoDone = false;
 
 }());

@@ -3,15 +3,24 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-canvas {
+h1.sitetitle {
+  display: none;
+}
+
+header, canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20%;
+  left: 0%;
   width: 100%;
   text-align: center;
 }
 
-h1.sitetitle {
+#logo {
+  width: 90%;
+  max-width: 776px;
+}
+
+canvas {
   display: none;
 }
 
@@ -52,4 +61,16 @@ footer {
 footer a {
   color: #888;
   text-decoration: none;
+}
+
+
+/* Media querys */
+
+@media (min-width: 768px) {
+  canvas {
+    display: block;
+  }
+  header #logo {
+    display: none;
+  }
 }
