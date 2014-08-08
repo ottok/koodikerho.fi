@@ -1,5 +1,5 @@
-/*jshint browser:true */
-/*global createjs, TweenLite, Quad */
+/* jshint browser:true */
+/* global createjs, TweenLite, Quad */
 
 (function () {
   'use strict';
@@ -11,7 +11,7 @@
     var textString = 'KOODIKERHO.FI';
 
     var offsetX = (window.innerWidth-800)/2;
-    var offsetY = 0;
+    var offsetY = (window.innerHeight-300)/2;
     var textStage = new createjs.Stage('text');
     textStage.canvas.width = window.innerWidth;
     textStage.canvas.height = window.innerHeight;

@@ -1,76 +1,16 @@
-body {
-  background: #fff;
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1.sitetitle {
-  display: none;
-}
-
-header, canvas {
-  position: absolute;
-  top: 20%;
-  left: 0%;
-  width: 100%;
-  text-align: center;
-}
-
-#logo {
-  width: 90%;
-  max-width: 776px;
-}
-
-canvas {
-  display: none;
-}
-
-#signup {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-#signup input[type="text"] {
-  border: 1px solid #ddd;
-  padding: 6px;
-  font-size: 18px;
-}
-
-#signup input[type="submit"] {
-  display: inline-block;
-  border: 0;
-  line-height: 35px;
-  height: 35px;
-  color: #fff;
-  background: #d33;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-
-footer a {
-  color: #888;
-  text-decoration: none;
-}
-
-
-/* Media querys */
-
-@media (min-width: 768px) {
-  canvas {
-    display: block;
-  }
-  header #logo {
-    display: none;
-  }
-}
+/**
+ * Theme Name: Koodikerho theme
+ * Theme URI: https://github.com/ottok/koodikerho.fi
+ * Description:
+ * Author: Seravo Oy
+ * Author URI: http://seravo.fi
+ * Version: 1.0
+ * Tags: koodikerho, canvas, javascript, bootstrap, 3.2, wordpress
+ *
+ * License: The MIT License (MIT)
+ * License URI: http://opensource.org/licenses/MIT
+ *
+ * Please note that this is not intended to be a full working theme. It is
+ * intended only as a starting point for building your own Wordpress Bootstrap
+ * themes. Please feel welcome to use and fork this theme for your own purposes.
+ */
