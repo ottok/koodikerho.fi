@@ -1,11 +1,8 @@
 <?php
 /**
  * Filename: index.php
- * Project: Blank Bootstrap WP Theme
- * Copyright: (c) 2014 Zuige Productions
- * License: The MIT License (MIT) http://opensource.org/licenses/MIT
- *
- * This is the default template file loaded by wordpress. Use this as your fallback page template.
+ * Project: Koodikerho.fi
+ * Copyright: (c) 2014 Seravo
  */
 
 ?>
@@ -22,8 +19,6 @@
   <!-- Header scripts -->
   <?php wp_head(); ?>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300' rel='stylesheet' type='text/css'>
-
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -34,34 +29,42 @@
 
 <body class="<?php get_body_class(); ?>" role="document">
 
-<header>
-<h1 class="sitetitle">Koodikerho.fi</h1>
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/koodikerho.fi-logo.png" alt="Koodikerho.fi logo" id="logo">
-</header>
+  <h1><?php bloginfo('name'); ?></h1>
 
-<canvas id="text" width="500" height="100"></canvas>
-<canvas id="stage" width="500" height="100"></canvas>
+  <?php
+    wp_nav_menu( array(
+      'menu'              => 'primary',
+      'theme_location'    => 'primary',
+      'container'         => 'div',
+      'container_class'   => 'navbar-collapse collapse',
+      'container_id'      => 'navbar-collapse-1',
+      'menu_class'        => 'nav navbar-nav',
+      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+      'walker'            => new wp_bootstrap_navwalker(),
+    ));
+  ?>
 
-<div id="signup">
-<?php
+  <!-- Start the loop -->
 
-$widgetNL = new WYSIJA_NL_Widget(true);
-echo $widgetNL->widget(array('form' => 1, 'form_type' => 'php'));
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-/*
-<form id="signup">
-    <input type="text" id="email" value="" placeholder="oma@osoitteesi.fi" />
-    <input type="submit" value="Haluan ilmoituksen kun sivusto avataan"/>
-</form>
-*/?>
-</div>
+    <article>
 
-<footer>
-<small><a href="https://github.com/ottok/koodikerho.fi">Näytä lähdekoodi</a></small>
-</footer>
+      <h2><?php the_title(); ?></h2>
 
-<!-- Footer scripts -->
-<?php wp_footer(); ?>
+      <?php the_content(); ?>
 
+    </article>
+
+  <?php endwhile; else : ?>
+
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+
+  <?php endif; ?>
+
+  <!-- End the loop -->
+
+  <!-- Footer scripts -->
+  <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,11 +1,8 @@
 <?php
 /**
  * Filename: functions.php
- * Project: Blank Bootstrap WP Theme
- * Copyright: (c) 2014 Zuige Productions
- * License: The MIT License (MIT) http://opensource.org/licenses/MIT
- *
- * Put your theme functions here. You know what to do.
+ * Project: Koodikerho.fi
+ * Copyright: (c) 2014 Seravo
  */
 
 
