@@ -5,11 +5,6 @@
  * Copyright: (c) 2014 Seravo
  */
 
-
-/*
- * include custom navwalker for bootstrap from
- * https://github.com/twittem/wp-bootstrap-navwalker
- */
 require_once( 'inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php' );
 
 
@@ -61,3 +56,16 @@ function load_theme_assets () {
 register_nav_menus( array(
     'primary' => 'Navigation',
 ));
+
+function arphabet_widgets_init() {
+
+	register_sidebar( array(
+		'name' => 'Home right sidebar',
+		'id' => 'home_right_1',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );

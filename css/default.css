@@ -1,12 +1,19 @@
 /**
- * Filename: default.css
- * Project: Blank Bootstrap WP Theme
- * Copyright: (c) 2014 Zuige Productions
- * License: The MIT License (MIT) http://opensource.org/licenses/MIT
+ * Theme Name: Koodikerho theme
+ * Theme URI: https://github.com/ottok/koodikerho.fi
+ * Description:
+ * Author: Seravo Oy
+ * Author URI: http://seravo.fi
+ * Version: 1.0
+ * Tags: koodikerho, canvas, javascript, bootstrap, 3.2, wordpress
  *
- * Edit this to add your own custom css to the theme.
+ * License: The MIT License (MIT)
+ * License URI: http://opensource.org/licenses/MIT
+ *
+ * Please note that this is not intended to be a full working theme. It is
+ * intended only as a starting point for building your own Wordpress Bootstrap
+ * themes. Please feel welcome to use and fork this theme for your own purposes.
  */
-
 
 body {
   background: #fff;
@@ -18,6 +25,11 @@ h1.sitetitle {
   top: 20%;
   display: none;
 }
+
+h1 {
+	text-align: left;
+}
+
 
 header {
   top: 20%;
@@ -44,11 +56,7 @@ canvas {
 }
 
 #signup {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: 100%;
-  text-align: center;
+  margin-top: 280px;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -69,15 +77,17 @@ canvas {
   padding: 7px 17px;
 }
 
-footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
+.site-source {
+  margin: 0;
+  padding: 0;
 }
 
-footer a {
+footer {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.site-source a {
   color: #888;
   text-decoration: none;
 }
@@ -85,7 +95,7 @@ footer a {
 #signup .wysija-paragraph {
   margin: 0;
   display: inline;
-  position: relative;
+  position: relative; 
 }
 
 .widget_wysija_cont p label {
@@ -95,6 +105,24 @@ footer a {
 #signup .formError {
   left: 0 !important;
   top: 34px !important;
+}
+
+.entry-meta {
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+#text {
+	display: none;
+}
+
+.single-post {
+	margin-top: 60px;
+}
+
+.page {
+	margin-top: 60px;
 }
 
 /* Media querys */

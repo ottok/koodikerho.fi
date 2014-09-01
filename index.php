@@ -6,65 +6,48 @@
  */
 
 ?>
-<!DOCTYPE html>
 
-<html lang="fi">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php get_header(); ?>
 
-  <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+<header>
+	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/koodikerho.fi-logo.png" alt="Koodikerho.fi logo" id="logo">
+</header>
 
-  <!-- Header scripts -->
-  <?php wp_head(); ?>
+<div id="main-content" class="container">
+	
+	<div class="row">
+		<div class="col-md-16 col-md-offset-2">
+			<canvas id="text"></canvas>
+			<canvas id="stage"></canvas> 
+		</div>
+	
+		<div id="signup" class="col-md-8 col-md-offset-3">
+			<?php
+				$widgetNL = new WYSIJA_NL_Widget(true);
+				echo $widgetNL->widget(array('form' => 1, 'form_type' => 'php'));
+			?>
+			<div class="col-md-8 col-md-offset-2">
+				<div class="site-source"><small><a href="https://github.com/ottok/koodikerho.fi">Näytä lähdekoodi</a></small></div>
+			</div>
+		</div>
+	</div>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
+	<div class="row" style="margin-bottom:100px;"></div>
 
-<body class="<?php get_body_class(); ?>" role="document">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+		<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+					get_template_part( 'content', get_post_format() );
+				endwhile;
 
-  <h1><?php bloginfo('name'); ?></h1>
+				else :
+					get_template_part( 'content', 'none' );
+				endif;
+		?>
+	</div>
+</div>
 
-  <?php
-    wp_nav_menu( array(
-      'menu'              => 'primary',
-      'theme_location'    => 'primary',
-      'container'         => 'div',
-      'container_class'   => 'navbar-collapse collapse',
-      'container_id'      => 'navbar-collapse-1',
-      'menu_class'        => 'nav navbar-nav',
-      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-      'walker'            => new wp_bootstrap_navwalker(),
-    ));
-  ?>
+<?php get_footer(); 
 
-  <!-- Start the loop -->
-
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-    <article>
-
-      <h2><?php the_title(); ?></h2>
-
-      <?php the_content(); ?>
-
-    </article>
-
-  <?php endwhile; else : ?>
-
-    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-
-  <?php endif; ?>
-
-  <!-- End the loop -->
-
-  <!-- Footer scripts -->
-  <?php wp_footer(); ?>
-</body>
-</html>

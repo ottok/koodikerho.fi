@@ -1,11 +1,12 @@
 <?php
 /**
- * Filename: front-page.php
+ * Filename: header.php
  * Project: Koodikerho.fi
  * Copyright: (c) 2014 Seravo
  */
 
 ?>
+
 <!DOCTYPE html>
 
 <html lang="fi">
@@ -30,35 +31,8 @@
 </head>
 
 <body class="<?php get_body_class(); ?>" role="document">
+	
+	<?php get_template_part( 'navigation'); ?>
 
-<header>
-<h1 class="sitetitle">Koodikerho.fi</h1>
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/koodikerho.fi-logo.png" alt="Koodikerho.fi logo" id="logo">
-</header>
+	<div id="main" class="site-main">
 
-<canvas id="text" width="500" height="100"></canvas>
-<canvas id="stage" width="500" height="100"></canvas>
-
-<div id="signup">
-<?php
-
-$widgetNL = new WYSIJA_NL_Widget(true);
-echo $widgetNL->widget(array('form' => 1, 'form_type' => 'php'));
-
-/*
-<form id="signup">
-    <input type="text" id="email" value="" placeholder="oma@osoitteesi.fi" />
-    <input type="submit" value="Haluan ilmoituksen kun sivusto avataan"/>
-</form>
-*/?>
-</div>
-
-<footer>
-<small><a href="https://github.com/ottok/koodikerho.fi">Näytä lähdekoodi</a></small>
-</footer>
-
-<!-- Footer scripts -->
-<?php wp_footer(); ?>
-
-</body>
-</html>

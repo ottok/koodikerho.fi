@@ -13,11 +13,11 @@
     var offsetX = (window.innerWidth-800)/2;
     var offsetY = (window.innerHeight-300)/2;
     var textStage = new createjs.Stage('text');
-    textStage.canvas.width = window.innerWidth;
+    textStage.canvas.width = window.innerWidth * 0.9;
     textStage.canvas.height = window.innerHeight;
 
     var stage = new createjs.Stage('stage');
-    stage.canvas.width = window.innerWidth;
+    stage.canvas.width = window.innerWidth * 0.9;
     stage.canvas.height = window.innerHeight;
 
     var text = new createjs.Text('t', textStyle, '#fff');
