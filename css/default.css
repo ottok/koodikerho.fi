@@ -44,6 +44,11 @@ canvas {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1000;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  display: block;
 }
 
 #logo {
@@ -52,13 +57,13 @@ canvas {
 }
 
 canvas {
-  display: none;
+  display: none; 
 }
 
 #signup {
-  margin-top: 280px;
   opacity: 0;
   transition: opacity 0.5s;
+  margin-top: 70px;
 }
 
 #signup input[type="text"] {
@@ -117,15 +122,19 @@ footer {
 	display: none;
 }
 
-.single-post {
-	margin-top: 60px;
+input {
+	white-space: normal;
 }
-
-.page {
-	margin-top: 60px;
-}
-
 /* Media querys */
+
+@media (max-width: 768px) {
+	.single-post {
+		margin-top: 60px;
+	}
+	.page {
+		margin-top: 60px;
+	}	
+}
 
 @media (min-width: 768px) {
   canvas {
@@ -134,4 +143,23 @@ footer {
   header #logo {
     display: none;
   }
+  #signup {
+	margin-top: 330px;
+  }
+  .single-post {
+		margin-top: 120px;
+  }
+  .page {
+	margin-top: 120px;
+  }
 }
+
+@media (min-width: 992px) {
+	.single-post {
+		margin-top: 70px;
+	}
+	.page {
+		margin-top: 70px;
+	}	
+}
+

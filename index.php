@@ -9,12 +9,8 @@
 
 <?php get_header(); ?>
 
-<header>
-	<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/koodikerho.fi-logo.png" alt="Koodikerho.fi logo" id="logo">
-</header>
 
 <div id="main-content" class="container">
-	
 	<div class="row">
 		<div class="col-md-16 col-md-offset-2">
 			<canvas id="text"></canvas>
@@ -26,9 +22,7 @@
 				$widgetNL = new WYSIJA_NL_Widget(true);
 				echo $widgetNL->widget(array('form' => 1, 'form_type' => 'php'));
 			?>
-			<div class="col-md-8 col-md-offset-2">
-				<div class="site-source"><small><a href="https://github.com/ottok/koodikerho.fi">Näytä lähdekoodi</a></small></div>
-			</div>
+			
 		</div>
 	</div>
 
