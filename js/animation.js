@@ -8,7 +8,7 @@
 
     var colors = ['#3d3', '#d33', '#33d', '#dd3', '#3dd'];
     var textStyle = '400 100px "Open Sans",sans-serif';
-    var textString = 'KOODIKERHO.FI';
+    var textString = 'KODKLUBBEN.FI';
 
     var offsetX = (window.innerWidth-1600)/2;
     var offsetY = (window.innerHeight-800)/2;
@@ -41,14 +41,14 @@
     }
 
     var circles = [];
-    for (var count = 5; count < 318; count++) {
+    for (var count = 4; count < 347; count++) {
       addDot(count);
     }
 
     text.text = textString;
     text.font = textStyle;
     text.textAlign = 'center';
-    text.x = 408;
+    text.x = 406;
     text.y = 100;
     textStage.addChild(text);
     textStage.update();
