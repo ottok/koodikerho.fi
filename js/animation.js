@@ -6,12 +6,12 @@
 
   function animation() {
 
-    var colors = ['#d33', '#3d3', '#33d', '#dd3', '#3dd'];
+    var colors = ['#3d3', '#d33', '#33d', '#dd3', '#3dd'];
     var textStyle = '400 100px "Open Sans",sans-serif';
     var textString = 'KOODIKERHO.FI';
 
-    var offsetX = (window.innerWidth-800)/2;
-    var offsetY = (window.innerHeight-400)/2;
+    var offsetX = (window.innerWidth-1600)/2;
+    var offsetY = (window.innerHeight-800)/2;
     var textStage = new createjs.Stage('text');
     textStage.canvas.width = window.innerWidth;
     textStage.canvas.height = window.innerHeight;
@@ -26,7 +26,7 @@
     // but running simply addDot() does not weem to work..
     function addDot(count) {
       var circle = new createjs.Shape();
-      var r = 8;
+      var r = 16;
       var x = window.innerWidth*Math.random();
       var y = window.innerHeight*Math.random();
       var color = colors[Math.floor(count % colors.length)];
@@ -41,27 +41,27 @@
     }
 
     var circles = [];
-    for (var count = 1; count < 308; count++) {
+    for (var count = 5; count < 318; count++) {
       addDot(count);
     }
 
     text.text = textString;
     text.font = textStyle;
     text.textAlign = 'center';
-    text.x = 400;
-    text.y = 0;
+    text.x = 408;
+    text.y = 100;
     textStage.addChild(text);
     textStage.update();
 
     var ctx = document.getElementById('text').getContext('2d');
-    var pix = ctx.getImageData(0,0,800,200).data;
+    var pix = ctx.getImageData(0,0,1600,400).data;
     var textPixels = [];
-    for (var i = pix.length; i >= 0; i -= 4) {
+    for (var i = pix.length; i >= 0; i -= 2) {
       if (pix[i] !== 0) {
-        var x = (i / 4) % 800;
-        var y = Math.floor(Math.floor(i / 800) / 4);
+        var x = (i / 2) % 1600;
+        var y = Math.floor(Math.floor(i / 1600) / 2);
 
-        if((x && x % 8 === 0) && (y && y % 8 === 0)) {
+        if((x && x % 16 === 0) && (y && y % 16 === 0)) {
           textPixels.push({x: x, y: y});
         }
       }
@@ -94,13 +94,8 @@
         alpha: 1,
         radius: 5,
         scaleX: 0.4,
-        scaleY: 0.4,
-        onComplete: showSignupForm
+        scaleY: 0.4
       });
-    }
-
-    function showSignupForm(top, left) {
-      document.getElementById('signup').style.opacity = 1;
     }
 
     // render a frame each 60 ms
