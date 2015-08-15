@@ -8,7 +8,7 @@
 
     var colors = ['#3d3', '#d33', '#33d', '#dd3', '#3dd'];
     var textStyle = '400 100px "Open Sans",sans-serif';
-    var textString = 'KODKLUBBEN.FI';
+    var textString = 'KOODIKERHO.FI';
 
     var offsetX = (window.innerWidth-1600)/2;
     var offsetY = (window.innerHeight-800)/2;
